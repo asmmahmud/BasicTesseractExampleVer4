@@ -1,8 +1,8 @@
-import org.bytedeco.javacpp.*;
+import org.bytedeco.javacpp.BytePointer;
 import org.junit.Test;
 
 import static org.bytedeco.javacpp.lept.*;
-import static org.bytedeco.javacpp.tesseract.*;
+import static org.bytedeco.javacpp.tesseract.TessBaseAPI;
 import static org.junit.Assert.assertTrue;
 
 public class BasicTesseractExampleTest {
@@ -13,7 +13,7 @@ public class BasicTesseractExampleTest {
 
         TessBaseAPI api = new TessBaseAPI();
         // Initialize tesseract-ocr with English, without specifying tessdata path
-        if (api.Init(".", "ENG") != 0) {
+        if (api.Init("tessdata", "ENG") != 0) {
             System.err.println("Could not initialize tesseract.");
             System.exit(1);
         }
