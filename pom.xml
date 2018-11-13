@@ -7,13 +7,30 @@
     <groupId>com.github.piersy</groupId>
     <artifactId>BasicTesseractExample</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+  <properties>
+    <os.classifier>windows-x86_64</os.classifier>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties> 
     <dependencies>
-        <dependency>
-            <groupId>org.bytedeco.javacpp-presets</groupId>
-            <artifactId>tesseract</artifactId>
-            <version>3.03-rc1-0.11</version>
-        </dependency>
+    <dependency>
+      <groupId>org.bytedeco.javacpp-presets</groupId>
+      <artifactId>tesseract</artifactId>
+      <version>4.0.0-rc2-1.4.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.bytedeco.javacpp-presets</groupId>
+      <artifactId>tesseract</artifactId>
+      <version>4.0.0-rc2-1.4.3</version>
+      <classifier>${os.classifier}</classifier>
+    </dependency>
+    <dependency>
+      <groupId>org.bytedeco.javacpp-presets</groupId>
+      <artifactId>leptonica</artifactId>
+      <version>1.76.0-1.4.3</version>
+      <classifier>${os.classifier}</classifier>
+    </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
